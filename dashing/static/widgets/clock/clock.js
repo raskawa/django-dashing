@@ -14,6 +14,7 @@ Dashboard.widgets.Clock = function (dashboard) {
     this.render = function render () {
         var self = this,
             clock = self.getWidget();
+        self.html.css('background-color', self.data.color);
         clock.find('.date').text(self.data.date);
         clock.find('.time').text(self.data.time);
     };

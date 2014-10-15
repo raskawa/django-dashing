@@ -17,6 +17,8 @@ Dashboard.widgets.Graph = function (dashboard) {
         graph.find('h1.title').text(self.data.title);
         graph.find('.value').text(self.data.value);
         graph.find('.more-info').text(self.data.more_info);
+        self.html.css('background-color', self.data.color);
+
 
         if (!graph.find('svg').length) {
             self.renderGraph(graph, self.data);

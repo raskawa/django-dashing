@@ -25,6 +25,7 @@ Dashboard.widgets.List = function (dashboard) {
             }
         }
 
+        self.html.css('background-color', self.data.color);
         list.find('ul').html(content);
         list.find('.title').text(self.data.title);
         list.find('.more-info').text(self.data.more_info);
