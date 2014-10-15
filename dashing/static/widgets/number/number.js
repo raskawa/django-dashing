@@ -3,10 +3,10 @@ Dashboard.widgets.Number = function (dashboard) {
     var self = this,
         widget;
     this.__init__ = function () {
-        var html = $('#templates').find('.widget-number').clone();
-        html.css('background-color', self.color);
+        self.html = $('#templates').find('.widget-number').clone();
+        self.html.css('background-color', self.color);
         widget = dashboard.grid.add_widget(
-            html,
+            self.html,
             self.col,
             self.row);
     };
@@ -14,6 +14,7 @@ Dashboard.widgets.Number = function (dashboard) {
     this.col = 1;
     this.color = '#96bf48';
     this.render = function () {
+        self.html.css('background-color', self.data.color);
         widget.find('.value').html(self.data.value);
         widget.find('.title').text(self.data.title);
         widget.find('.change-rate').text(self.data.change_rate);
