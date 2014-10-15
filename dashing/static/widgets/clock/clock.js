@@ -2,10 +2,10 @@
 Dashboard.widgets.Clock = function (dashboard) {
     var widget;
     this.__init__ = function () {
-        var self = this,
-            html = $('#templates').find('.widget-clock').clone();
+        var self = this
+        self.html = $('#templates').find('.widget-clock').clone();
         widget = dashboard.grid.add_widget(
-            html,
+            self.html,
             self.col,
             self.row);
     };

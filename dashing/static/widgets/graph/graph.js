@@ -3,9 +3,9 @@ Dashboard.widgets.Graph = function (dashboard) {
     var self = this,
         widget;
     this.__init__ = function () {
-        var html = $('#templates').find('.widget-graph').clone();
+        self.html = $('#templates').find('.widget-graph').clone();
         widget = dashboard.grid.add_widget(
-            html,
+            self.html,
             self.col,
             self.row);
     };
