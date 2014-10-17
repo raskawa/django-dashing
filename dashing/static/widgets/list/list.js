@@ -15,6 +15,7 @@ Dashboard.widgets.List = function (dashboard) {
     this.col = 1;
     this.rowPosition = 1;
     this.colPosition = 1;
+    this.color = '#12b0c5';
 
     this.render = function () {
         var list = self.getWidget(),
