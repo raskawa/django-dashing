@@ -7,18 +7,21 @@ Dashboard.widgets.Graph = function (dashboard) {
         widget = dashboard.grid.add_widget(
             self.html,
             self.col,
-            self.row);
+            self.row,
+            self.colPosition,
+            self.rowPosition);
     };
     this.row = 1;
     this.col = 2;
+    this.rowPosition = 1;
+    this.colPosition = 1;
+
     this.render = function () {
         var graph = self.getWidget();
-
+        self.html.css('background-color', self.color);
         graph.find('h1.title').text(self.data.title);
         graph.find('.value').text(self.data.value);
         graph.find('.more-info').text(self.data.more_info);
-        self.html.css('background-color', self.data.color);
-
 
         if (!graph.find('svg').length) {
             self.renderGraph(graph, self.data);

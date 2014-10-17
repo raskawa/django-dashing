@@ -7,10 +7,15 @@ Dashboard.widgets.List = function (dashboard) {
         widget = dashboard.grid.add_widget(
             self.html,
             self.col,
-            self.row);
+            self.row,
+            self.colPosition,
+            self.rowPosition);
     };
     this.row = 2;
     this.col = 1;
+    this.rowPosition = 1;
+    this.colPosition = 1;
+
     this.render = function () {
         var list = self.getWidget(),
             content = '';
@@ -25,7 +30,7 @@ Dashboard.widgets.List = function (dashboard) {
             }
         }
 
-        self.html.css('background-color', self.data.color);
+        self.html.css('background-color', self.color);
         list.find('ul').html(content);
         list.find('.title').text(self.data.title);
         list.find('.more-info').text(self.data.more_info);
